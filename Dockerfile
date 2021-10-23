@@ -10,7 +10,7 @@ RUN apt update -y &&\
     apt install -y python3-pip 
     
     
-ENTRYPOINT ["python3"]
+ENTRYPOINT["tail","-f","/dev/null"]
 
 
 
