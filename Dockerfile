@@ -55,7 +55,7 @@ LABEL summary="$SUMMARY" \
     # Remove redhat-logos-httpd (httpd dependency) to keep image size smaller.
     rpm -e --nodeps redhat-logos-httpd && \
     yum -y clean all --enablerepo='*' &&\
-    yum install -y geos-devel
+    yum install -y libgeos-dev
     
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
