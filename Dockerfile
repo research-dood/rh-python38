@@ -55,7 +55,6 @@ LABEL summary="$SUMMARY" \
     # Remove redhat-logos-httpd (httpd dependency) to keep image size smaller.
     rpm -e --nodeps redhat-logos-httpd && \
     yum -y clean all --enablerepo='*' &&\
-    yum install -y https://download1.rpmfusion.org/free/el/rpmfusion-free-release-7.noarch.rpm &&\
     yum install -y geos-devel
     
 
