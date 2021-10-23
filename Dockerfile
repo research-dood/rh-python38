@@ -4,6 +4,6 @@ FROM registry.access.redhat.com/ubi8/python-38
 USER 0 
 
 # Install the dependencies 
-RUN pip install # Run the application 
+RUN pip3 install pandas # Run the application 
 
-CMD python manage.py runserver 0.0.0.0:8080
+
