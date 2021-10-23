@@ -48,7 +48,7 @@ LABEL summary="$SUMMARY" \
       
       
  RUN INSTALL_PKGS="python38 python38-devel python38-setuptools python38-pip nss_wrapper \
-        httpd httpd-devel mod_ssl mod_auth_gssapi mod_ldap &&\
+        httpd httpd-devel mod_ssl mod_auth_gssapi mod_ldap" &&\
     yum -y module enable python38:3.8 httpd:2.4 && \
     yum -y --setopt=tsflags=nodocs install $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
