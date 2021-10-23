@@ -8,9 +8,6 @@ RUN apt update -y &&\
     apt install -y software-properties-common &&\
     apt install -y python3.8 &&\
     apt install -y python3-pip 
-    
- 
-CMD["sleep 3d"]
 
 
 
