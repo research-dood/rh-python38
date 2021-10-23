@@ -56,21 +56,7 @@ LABEL summary="$SUMMARY" \
     rpm -e --nodeps redhat-logos-httpd && \
     yum -y clean all --enablerepo='*'
 
-# Copy extra files to the image.
-COPY 3.8/root/ /
 
-# Python 3 only
-# Yes, the directory below is already copied by the previous command.
-# The problem here is that the wheels directory is copied as a symlink.
-# Only if you specify symlink directly as a source, COPY copies all the
-# files from the symlink destination.
-COPY 3.8/root/opt/wheels /opt/wheels
-# - Create a Python virtual environment for use by any application to avoid
-#   potential conflicts with Python packages preinstalled in the main Python
-#   installation.
-# - In order to drop the root user, we have to make some directories world
-#   writable as OpenShift default security model is to run the container
-#   under random UID.
 RUN \
     python3.8 -m venv ${APP_ROOT} && \
     # Python 3 only code, Python 2 installs pip from PyPI in the assemble script. \
