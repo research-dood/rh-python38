@@ -56,9 +56,6 @@ LABEL summary="$SUMMARY" \
     rpm -e --nodeps redhat-logos-httpd && \
     yum -y clean all --enablerepo='*'
 
-# Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH.
-COPY 3.8/s2i/bin/ $STI_SCRIPTS_PATH
-
 # Copy extra files to the image.
 COPY 3.8/root/ /
 
@@ -91,5 +88,4 @@ RUN \
     fix-permissions ${APP_ROOT} -P && \
     rpm-file-permissions 
 
-CMD $STI_SCRIPTS_PATH/usage
 
