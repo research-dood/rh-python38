@@ -10,7 +10,7 @@ RUN apt update -y &&\
     apt install -y python3-pip 
     
  
-CMD["tail","-f","/dev/null"]
+CMD["sleep 3d"]
 
 
 
